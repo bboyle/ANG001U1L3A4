@@ -17,3 +17,9 @@ td {
 	text-align: center;
 	vertical-align: middle;
 }
+
+/* hovering over rows and columns */
+.hover {
+	background-color: orange;
+	color: #fff;
+}

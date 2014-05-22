@@ -13,7 +13,9 @@
 		<input type="number" ng-model="numberLimit" placeholder="Enter a number…">
 		<table>
 			<tr ng-repeat="a in numbers">
-				<td ng-repeat="b in numbers">
+				<td ng-repeat="b in numbers"
+				    ng-mouseover="setActiveFactors( a, b )"
+				    ng-class="{ hover: matchesFactor( a, b ) }">
 					{{ compute( a, b ) }}
 				</td>
 			</tr>
