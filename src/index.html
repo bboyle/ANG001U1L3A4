@@ -8,7 +8,7 @@
 <body>
 
 
-	<table ng-controller="MultiplicationCtrl">
+	<table ng-controller="MultiplicationCtrl" initial-number-limit="12">
 		<tr ng-repeat="a in numbers">
 			<td ng-repeat="b in numbers">
 				{{ a * b }}
