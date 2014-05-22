@@ -9,6 +9,12 @@
 <body>
 
 
+	<div ng-controller="DisplayCtrl">
+		<div ng-if="content">{{ content }}</div>
+		<div ng-if="! content">…</div>
+	</div>
+
+
 	<div ng-controller="MultiplicationCtrl" initial-number-limit="12">
 		<input type="number" ng-model="numberLimit" placeholder="Enter a number…">
 		<table>
@@ -16,6 +22,7 @@
 				<td ng-repeat="b in numbers"
 				    ng-mouseover="setActiveFactors( a, b )"
 				    ng-mouseleave="cleaActiveFactors()"
+				    ng-click="setActiveNumber( compute( a, b ))"
 				    ng-class="{ hover: matchesFactor( a, b ) }">
 					{{ compute( a, b ) }}
 				</td>

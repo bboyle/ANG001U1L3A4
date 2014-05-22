@@ -1,5 +1,16 @@
 angular.module( 'myApp', [] )
-.controller( 'MultiplicationCtrl', function( $scope, $attrs ) {
+
+
+// ???
+.controller( 'DisplayCtrl', function( $scope ) {
+	$scope.$on( 'displayData', function( event, data ) {
+		$scope.content = data;
+	});
+})
+
+
+// create and manage multiplication table
+.controller( 'MultiplicationCtrl', function( $scope, $attrs, $rootScope ) {
 	'use strict';
 
 
@@ -26,11 +37,18 @@ angular.module( 'myApp', [] )
 	};
 
 
+	// set number on click
+	$scope.setActiveNumber = function( n ) {
+		$rootScope.$broadcast( 'displayData', n );
+	};
+
+
 	// set factors when mouse moves over table
 	$scope.setActiveFactors = function( a, b ) {
 		activeFactors.a = a;
 		activeFactors.b = b;
 	};
+
 	$scope.cleaActiveFactors = function() {
 		$scope.setActiveFactors( null, null );
 	};
