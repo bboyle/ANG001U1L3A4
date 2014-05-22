@@ -31,6 +31,9 @@ angular.module( 'myApp', [] )
 		activeFactors.a = a;
 		activeFactors.b = b;
 	};
+	$scope.cleaActiveFactors = function() {
+		$scope.setActiveFactors( null, null );
+	};
 
 	// compare against active factors
 	$scope.matchesFactor = function( a, b ) {

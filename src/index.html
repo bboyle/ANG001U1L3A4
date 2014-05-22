@@ -15,6 +15,7 @@
 			<tr ng-repeat="a in numbers">
 				<td ng-repeat="b in numbers"
 				    ng-mouseover="setActiveFactors( a, b )"
+				    ng-mouseleave="cleaActiveFactors()"
 				    ng-class="{ hover: matchesFactor( a, b ) }">
 					{{ compute( a, b ) }}
 				</td>
