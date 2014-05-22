@@ -8,13 +8,16 @@
 <body>
 
 
-	<table ng-controller="MultiplicationCtrl" initial-number-limit="12">
-		<tr ng-repeat="a in numbers">
-			<td ng-repeat="b in numbers">
-				{{ compute( a, b ) }}
-			</td>
-		</tr>
-	</table>
+	<div ng-controller="MultiplicationCtrl" initial-number-limit="12">
+		<input type="number" ng-model="numberLimit" placeholder="Enter a number…">
+		<table>
+			<tr ng-repeat="a in numbers">
+				<td ng-repeat="b in numbers">
+					{{ compute( a, b ) }}
+				</td>
+			</tr>
+		</table>
+	</div>
 
 
 	<script src="myApp.js"></script>
